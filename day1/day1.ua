@@ -14,6 +14,7 @@ PartOne ← (
   /+⌵-°⊟ # Split the rows and take the |delta| between both and sum it.
 )
 
+# First pt. two solution just using masking for searches:
 PartTwo ← (
   °⊟     # Split the rows.
   ⊙¤     # Fix the second row so it can be passed in full for each column of the second row.
@@ -23,11 +24,31 @@ PartTwo ← (
   /+ # Sum the resulting counts x*n counts.
 )
 
+# Second pt. two solution using classify:
+PartTwoClassify ← (
+  °⊟         # Split the rows.
+  ∩(⊛.⍆      # Sort the rows and classify them to get unique indices for each row.
+    ⊕([⊃⊢⧻]) # Turn both rows into a table of N to N's frequency.
+  )
+
+  # Turn the second row into a map of N to its frequency for lookups:
+  ⊙(¤map ⊙♭ °⊂ ⍉)
+
+  # Sum each row of the first table with:
+  /+≡(
+    °⊟     # n1, freq1 := split(row)
+    ⟜(:×)  # n1' := n1 * freq1 (keep n1 on top, pull map up)
+    ⍣get 0 # freq2 := get(n1, map) else 0
+    ×      # freq2 * n1'
+  )
+)
+
 ↘1 &args
 ≡(&fras
   Parse
-  ⊃({"Part One" PartOne}
-  | {"Part Two" PartTwo}
-  )
-  ∩(&p $"_: _" °⊟):
+  [⊃({"Part One" PartOne}
+    | {"Part Two" PartTwo}
+    | {"Part Two (Classify)" PartTwoClassify}
+    )]
+  ≡(&p $"_: _" °⊟)
 )
