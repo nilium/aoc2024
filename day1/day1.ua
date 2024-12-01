@@ -18,7 +18,7 @@ PartTwo ← (
   °⊟     # Split the rows.
   ⊙¤     # Fix the second row so it can be passed in full for each column of the second row.
   ≡(⟜=   # Take a copy of the number we're searching for and find all instances of it in the second row.
-    ×/+: # Swap their positions, sum the count of the number, and multiple it by the count.
+    ×/+: # Swap their positions, sum the count of the number, and multiply it by the count.
   )
   /+ # Sum the resulting counts x*n counts.
 )
