@@ -2,7 +2,7 @@
 # Experimental!
 
 Parse ← (
-  ?≠@\n. # Get a mask of all non-newline characters so it can be split via partition.
+  ≠@\n.  # Get a mask of all non-newline characters so it can be split via partition.
   ⊜(≠@ . # Get a mask of all non-space characters in the line.
     ⊜⋕   # Split the line using the space mask and parse each chunk as a number.
   )
