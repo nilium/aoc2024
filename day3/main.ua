@@ -30,20 +30,13 @@
     # a leading "do" in every case. Yields an array of {{} {"do" …} {"don't" …} …}. Because
     # it always leads with an empty array, chop the leading empty array off. See the scan docs for
     # another example of this.
-    ↘1⊕□\+(+≡(/×)⊃(={"do"}|={"don't"}).)
+    ↘1⊕□\+(↥≡/↧ ⊃(=□"do"|=□"don't").)
   )
 
   Call ← (
     Parse
-    # Sum all cases together, multiplying each sum by 1 only if its first element is "do".
-    ≡(°□
-      ⊃(={"do"} ↙1   # Get the multiplier for the sum (1 = do, 0 = anything else).
-      | /+≡(/×°□) ↘1 # Sum the product of each pair of numbers.
-      )
-      ×  # Multiply the sum and multiplier.
-      °¤ # FIXME: Un-fix the result because somewhere along the way it got wrapped.
-    )
-    /+ # Sum the sums of all do/don't mul() groups.
+    ▽≡(◇(=□"do"⊢)). # Remove all non-"do" cases
+    /+≡◇(/+≡◇/× ↘1) # Sum the product of each mul(X,Y) case.
   )
 └─╴
 
