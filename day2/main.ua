@@ -11,7 +11,7 @@
   # Test if an array is sequential (either rising or descending).
   Sequential ← ↥⊃(≍⍏|≍⍖)⟜(⇡⧻)
   # Test if each two rows of an array are in the range [1,3].
-  InRange ← /××⊃(≥1|≤3) ≡(⌵-°⊟) ◫ 2
+  InRange ← /××⊃(≥1|≤3) ≡(⌵-°⊟) ⧈∘ 2
 
   # Test if a report array is safe.
   Safe ← ×⊃Sequential InRange

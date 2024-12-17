@@ -40,7 +40,7 @@ Parse ← ⊜∘≠@\n.
 
   Call ← +⊃(
     Cardinals         # Check cardinal directions.
-  | ◫4_4              # Break the input into 4x4 (overlapping) windows.
+  | ⧈∘4_4             # Break the input into 4x4 (overlapping) windows.
     /+≡(/+≡Diagonals) # Count all diagonal matches in the windows.
   )
 └─╴
@@ -61,7 +61,7 @@ Parse ← ⊜∘≠@\n.
   # the strings "MAS" or "SAM".
   Call ← (
     # For each 3x3 window, check that it matches the pattern in IsEcks.
-    ◫3_3
+    ⧈∘3_3
     /+≡(/+≡IsEcks)
   )
 └─╴
