@@ -7,7 +7,7 @@ Parse ← (
   ⊜∘ ⊸≠@\n
   ⍜⇌↘₁ ↘₁
   ≡(⍜⇌↘₁↘₁)
-  ⊃(∩(⊢⊚⌕)@S,@E|△|map⟜(⬚0↯:[][⧻]) ⊚=@#)
+  ⊃(∩(⊢⊚⌕)@S,@E|△|≠@#)
   Map
 )
 
@@ -23,7 +23,7 @@ Parse ← (
   Nav ← |2.2 (
     ⊓Adv Ext
     ▽⤚≡⌟Bounded # Select directions that are in bounds.
-    ▽≡⌟(⬚1get⊡₁)⟜:
+    ▽≡⌟(⬚1⊡⊡₁)⟜:
     ↙⧻, [1000 1000 1]
   )
 └─╴
