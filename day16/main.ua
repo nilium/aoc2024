@@ -7,7 +7,7 @@ Parse ← (
   ⊜∘ ⊸≠@\n
   ⍜⇌↘₁ ↘₁
   ≡(⍜⇌↘₁↘₁)
-  ⊃(∩(⊢⊚⌕)@S,@E|△|⊚=@#)
+  ⊃(∩(⊢⊚⌕)@S,@E|△|map⟜(⬚0↯:[][⧻]) ⊚=@#)
   Map
 )
 
@@ -18,17 +18,17 @@ Parse ← (
 
   Adv     ← [⊃Turns Step]
   Ext     ← ⊃Map~Shape Map~Walls
-  Bounded ← /××⊃≥₀>⊣
+  Bounded ← /××⊃≥₀>⊡₁
 
   Nav ← |2.2 (
     ⊓Adv Ext
     ▽⤚≡⌟Bounded # Select directions that are in bounds.
-    ▽¬∊: ≡⊣⟜:
+    ▽≡⌟(⬚1get⊡₁)⟜:
     ↙⧻, [1000 1000 1]
   )
 └─╴
 
-Done ← ≍⊓⊣Map~End
+Done ← ≍⊓⊡₁Map~End
 
 P₁ ← ◌⊢ memopathNav Done ⊸[0_1 Map~Start] # Just extract cost. 
 
