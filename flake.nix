@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    uiua.url = "github:uiua-lang/uiua/0.14.0-rc.3";
+    uiua.url = "github:uiua-lang/uiua/0.14.0";
     uiua.inputs.nixpkgs.follows = "nixpkgs";
   };
 
